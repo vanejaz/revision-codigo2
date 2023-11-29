@@ -1,8 +1,10 @@
 var formulario = document.querySelector("#form")
+formulario.addEventListener("submit", (e)=>{
+//formulario.onsubmit = function(e) 
 
-formulario.onsubmit = function(e) {
 
-  e.prevent();
+  e.preventDefault();
+  console.log(e);
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -28,7 +30,7 @@ if (nombre.length > 0
     && edad < 120) ) {
   agregarInvitado(nombre, edad, nacionalidad)
   }
-}
+});
 
 var botonBorrar = document.createElement("button")
 botonBorrar.textContent = "Eliminar invitado"
